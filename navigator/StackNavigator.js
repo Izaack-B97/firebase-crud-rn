@@ -12,9 +12,9 @@ export const StackNavigator = () => {
         <Stack.Navigator
             screenOptions={{ headerShown: false }}
         >
-            <Stack.Screen name="CreateUserScreen" component={ CreateUserScreen } />
             <Stack.Screen name="UserListScreen" component={ UserListScreen } />
             <Stack.Screen name="UserDetailScreen" component={ UserDetailScreen } />
+            <Stack.Screen name="CreateUserScreen" component={ CreateUserScreen } />
         </Stack.Navigator>        
     )
 }

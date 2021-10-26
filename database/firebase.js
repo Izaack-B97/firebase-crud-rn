@@ -1,13 +1,13 @@
-const firebase = require('@firebase/app');
+import { LogBox } from 'react-native';
+
+import { firebase } from '@firebase/app';
+import '@firebase/firestore';
 
 // Optionally import the services that you want to use
 //import {...} from "firebase/auth";
 //import {...} from "firebase/database";
-//import {...} from "firebase/firestore";
 //import {...} from "firebase/functions";
 //import {...} from "firebase/storage";
-
-
 
 const firebaseConfig = {
     apiKey: "AIzaSyCNz5CEdSaUlF_stNd4Ton_z2Kx4qI6l34",
@@ -18,12 +18,18 @@ const firebaseConfig = {
     appId: "1:588425589202:web:42bb77553cd6bf809bd80b"
 };
 
-
-
 // Initialize Firebase
-firebase.default.initializeApp(firebaseConfig);
+if ( !firebase.apps.length ) {
+    firebase.initializeApp( firebaseConfig );
+} else {
+    firebase.app();
+}
 
+const db = firebase.firestore();
+
+LogBox.ignoreLogs(['Setting a timer']);
 
 export default {
-    firebaseConfig
+    firebase,
+    db
 }

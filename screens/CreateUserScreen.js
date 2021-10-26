@@ -3,8 +3,8 @@ import { Button, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, View } f
 
 import firebase from '../database/firebase';
 
-export const CreateUserScreen = () => {
-    
+export const CreateUserScreen = ({ navigation }) => {
+
     const [ datos, setDatos ] = useState({
         name: '',
         email: '',
@@ -17,11 +17,19 @@ export const CreateUserScreen = () => {
             [ name ] : value
         });
     }
-    
 
-    const createUser = () => {
-        console.log( datos );
-        console.log( firebase );
+    const createUser = async () => {
+        if ( datos.name === '' ) {
+            alert('Necesitamos el nombre')
+        } else {
+            await firebase.db.collection('users').add({
+                name: datos.name,
+                email: datos.email,
+                phone: datos.phone
+            });
+
+            navigation.navigate('UserListScreen');
+        }
     }
 
     return (
