@@ -35,6 +35,7 @@ export const CreateUserScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={ styles.container }>
             <ScrollView style={{ ...styles.container, padding: 30, paddingTop: 70 }}>
+                <Text style={ styles.title }>Create user</Text>
                 <View style={ styles.inputGroup }>
                     <TextInput placeholder='Name user' onChangeText={ value => handleChangeText('name', value) } />
                 </View>
@@ -61,5 +62,10 @@ const styles = StyleSheet.create({
         marginBottom: 15,
         borderBottomWidth: 1,
         borderBottomColor: '#cccccccc'
+    },
+    title: {
+        fontWeight: 'bold',
+        fontSize: 25,
+        marginBottom: 20
     }
 })

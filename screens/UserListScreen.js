@@ -20,9 +20,11 @@ export const UserListScreen = ({ navigation }) => {
 
     return (
         <SafeAreaView style={ styles.container }>
-            <Text style={ styles.title }>User list</Text>
-            <View style={ styles.topSeparation }>
-                <Button title="Crear usuario" type="outline" onPress={ () => navigation.navigate('CreateUserScreen') } />
+            <View style={{ marginHorizontal: 20 }}>
+                <Text style={ styles.title }>User list</Text>
+                <View style={ styles.topSeparation }>
+                    <Button title="Crear usuario" type="outline" onPress={ () => navigation.navigate('CreateUserScreen') } />
+                </View>
             </View>
             <ScrollView style={[ styles.scrollView, styles.topSeparation ]}>
                 {
@@ -52,7 +54,6 @@ export const UserListScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        marginHorizontal: 20,
         flex: 1
     },
     scrollView: {
