@@ -84,8 +84,9 @@ export const UserDetailScreen = ({ navigation, route }) => {
 
 const styles = StyleSheet.create({
     container: {
-        marginHorizontal: 20,
-        flex: 1
+        paddingHorizontal: 20,
+        flex: 1,
+        backgroundColor: '#ffffff'
     },
     scrollView: {
         flex: 1,

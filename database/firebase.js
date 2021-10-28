@@ -2,9 +2,9 @@ import { LogBox } from 'react-native';
 
 import { firebase } from '@firebase/app';
 import '@firebase/firestore';
+import "@firebase/auth";
 
 // Optionally import the services that you want to use
-//import {...} from "firebase/auth";
 //import {...} from "firebase/database";
 //import {...} from "firebase/functions";
 //import {...} from "firebase/storage";
@@ -26,10 +26,13 @@ if ( !firebase.apps.length ) {
 }
 
 const db = firebase.firestore();
+const auth = firebase.auth();
 
-LogBox.ignoreLogs(['Setting a timer']);
+
+LogBox.ignoreLogs(['Setting a timer', 'Non-serializable values were found in the navigation state',]);
 
 export default {
     firebase,
-    db
+    db,
+    auth
 }

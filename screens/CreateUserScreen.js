@@ -56,6 +56,7 @@ export const CreateUserScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#ffffff'
     },
     inputGroup: {
         flex: 1, padding: 0,
