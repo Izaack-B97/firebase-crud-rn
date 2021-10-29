@@ -8,7 +8,7 @@ import firebase from '../database/firebase';
 
 export const UserListScreen = ({ navigation, route }) => {
     
-    const [ user, setUser ] = useState( route.params.user );
+    const [ user, setUser ] = useState( route.params?.user );
     const [ users, setUsers ] = useState([]);
 
     useEffect(() => {
